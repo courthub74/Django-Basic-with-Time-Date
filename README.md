@@ -17,6 +17,7 @@ STATICFILES_DIRS = [
 ]
 
 
+
 <ins> FOR Datepicker (local) </ins>
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
@@ -24,6 +25,8 @@ STATICFILES_DIRS = [
 		<script src="{% static 'js/jQuery-3.5.0.min.js' %}"></script>
 		<!--JQuery UI-->
 		<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+
+
 
 
 <ins> for Timepicker(CDN) </ins>
