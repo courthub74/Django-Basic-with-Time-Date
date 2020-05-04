@@ -6,7 +6,7 @@ I used both local js/css and a CDN - Content Delivery Network
 
 for local:
 
-SETTINGS.PY
+<u>SETTINGS.PY</u>
 
 STATIC_URL = '/static/' #FOR CSS AND JS
 
@@ -17,7 +17,7 @@ STATICFILES_DIRS = [
 ]
 
 
-FOR Datepicker (local)
+<u>FOR Datepicker (local)</u>
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
 		<!--JQuery-->
@@ -26,7 +26,7 @@ FOR Datepicker (local)
 		<script src="{% static 'js/jquery-ui.min.js' %}"></script>
 
 
-for Timepicker(CDN)
+<u>for Timepicker(CDN)</u>
 
 Business as usual no need for {%%}
 
