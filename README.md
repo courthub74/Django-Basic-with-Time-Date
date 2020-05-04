@@ -8,9 +8,6 @@ for local:
 
 SETTINGS.PY
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/' #FOR CSS AND JS
 
 MEDIA_URL = '/images/' #FOR IMAGE
