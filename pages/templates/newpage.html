@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-	<h1>Time Page</h1>  <!--everything in Block Content is only displayed on it's page-->
+	<br>
 	<!--DATEPICKER-->
 		<link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
 		<!--JQuery-->
@@ -12,15 +12,17 @@
 		<script src="{% static 'js/jquery-ui.min.js' %}"></script>
 
 	<div class="container">
-	<p>Here is the Datepicker:<p>
-		<input type="text" id="datepicker" placeholder="click here:" />
-	</div>
+	<h2>Set Appointment</h2>  <!--everything in Block Content is only displayed on it's page-->
+	<br>
+		<p>Here is the Datepicker:<p>
+			<input type="text" id="datepicker" placeholder="click here:" />
+		</div>
 
-	<script>
-		
-		$("#datepicker").datepicker();
+		<script>
+			
+			$("#datepicker").datepicker();
 
-	</script>
+		</script>
 
 
 	<!--TIMEPICKER-->
