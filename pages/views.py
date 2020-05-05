@@ -6,13 +6,22 @@ from django.contrib import messages
 # Create your views here.
 
 #HOME
-def home(request):
-	all_appointments = Time.objects.all 
-	return render(request, "home.html", {'all_appointments': all_appointments})
+def home(request): 
+	return render(request, "home.html", {})
 
 #NEWPAGE
 def appointment(request):
-	return render(request, "newpage.html", {}) 
+	if request.method == 'POST':
+		form = TimeForm(request.POST or None)
+		if form.is_valid():
+			form.save()
+			messages.success(request, ('Appointment Has Been Added!'))
+			return redirect('schedules')
+		else:
+			messages.success(request, ('Seems Like There Was An Error...'))
+			return render(request, 'newpage.html', {})
+	else:
+		return render(request, 'newpage.html', {})
 
 #ABOUT
 def schedules(request):

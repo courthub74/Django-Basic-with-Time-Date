@@ -52,7 +52,27 @@
 	    </form>
 	  </div>
 	</nav>
-  		
+
+	<br>
+
+
+	<!--MESSAGES BLOCK-->
+	{% if messages %}
+	
+		{% for message in messages %}
+			   <div class="alert alert-primary alert-dismissable" role="alert">
+			   		<button class="close" data-dismiss="alert">
+			   			<small><sup>Close</sup></small>
+			   		</button>
+			   	{{ message }}
+			   </div>
+
+		{% endfor %}
+
+	{% endif %}
+
+
+
 
   		{% block content %}
 
@@ -64,6 +84,10 @@
   			
 
   		{% endblock %}
+
+
+  		<br><br>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
