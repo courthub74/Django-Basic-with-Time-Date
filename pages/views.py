@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Time
 
 # Create your views here.
 
@@ -6,10 +7,12 @@ from django.shortcuts import render
 def home(request):
 	return render(request, "home.html", {})
 
+#NEWPAGE
+def appointment(request):
+	return render(request, "newpage.html", {})
+
 #ABOUT
-def about(request):
+def schedules(request):
 	return render(request, "about.html", {})
 
-#NEWPAGE
-def newpage(request):
-	return render(request, "newpage.html", {})			
+			
