@@ -1,0 +1,145 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+
+
+
+{% block content %}
+
+
+<h2>Edit Appointment</h2>
+<hr>
+<br>
+
+
+	{% if get_appointment %}
+		<form method="POST">
+			{% csrf_token %}
+
+		<div class="container">
+		<div class="form-group">         <!--VALUE instead of placeholder because you want what you entered so you can edit it-->
+			<input type="text" class="form-control" value="{{ get_appointment.first }}" name="first"> 
+		</div>
+
+		 <div class="form-group">
+		    <input type="text" class="form-control" value="{{ get_appointment.last }}" name="last"> 
+		 </div>
+
+
+		 <br>
+
+
+
+
+
+
+		<!--DATEPICKER CONNECTIONS-->
+			<link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
+			<!--JQuery-->
+			<script src="{% static 'js/jQuery-3.5.0.min.js' %}"></script>
+			<!--JQuery UI-->
+			<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+
+				<!--DATEPICKER-->
+				<p>Select Date:<p>
+				<hr>
+					<input type="text" class="form-control" id="datepicker" value="{{ get_appointment.date }}" name="date" autocomplete="off">
+				</div>
+
+					<script>
+						
+						$("#datepicker").datepicker();
+
+					</script>
+
+			<!--TIMEPICKERS-->
+				<!--Here I use the Content Delivery Network-->
+				<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+				<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+				<br>
+				</div>
+
+			<div class="container">
+					<p>Start Time:<p>
+					<hr>
+						<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="start" value="{{ get_appointment.start }}"> <!--VALUE shows what you had the last time-->
+						<br>
+						<p>End Time:<p>
+						<hr>
+						<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="end" value="{{ get_appointment.end }}">
+
+				<!--TIMEPICKER SCRIPT-->
+					<script>
+						
+						$('.timepicker').timepicker({
+						    timeFormat: 'h:mm p',
+						    interval: 30,
+						    minTime: '9',
+						    maxTime: '10:00pm',
+						    defaultTime: '11',
+						    startTime: '9:00',
+						    dynamic: false,
+						    dropdown: true,
+						    scrollbar: true
+						});
+
+					</script>
+
+
+
+					<br>
+					<!--LOCATION-->
+					<p>Location:</p>
+					<hr>
+
+
+					<div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="radio" aria-label="Radio button for following text input" value="Little Caesars Arena" name="location">
+						    </div>
+						  </div>
+						  <label type="text" class="form-control" aria-label="Text input with radio">Little Caesars Arena</label> 
+
+
+
+						  <div class="input-group mb-3">
+						  <div class="input-group-prepend">
+						    <div class="input-group-text">
+						      <input type="radio" aria-label="Radio button for following text input" value="Away" name="location">
+						    </div>
+						  </div>
+						  <label type="text" class="form-control" aria-label="Text input with radio">Away</label> 
+						</div>
+					</div>
+
+
+
+
+
+					<div class="form-group">
+					  	<input type="hidden" value="{{ get_appointment.id }}" name="id">
+					 </div>
+
+					  	<button type="submit" class="btn btn-block btn-secondary">Edit Entry</button>
+
+					
+						<br>
+					<!--DELETE button-->
+					<form method="POST" action="#">
+						{% csrf_token %}
+						<input type="hidden" value="{{ get_appointment.id }}" name="id">
+						<button type="submit" class="btn btn-block btn-danger">Delete Entry</button>
+					</form>
+
+					<hr>
+
+					</form>
+
+		{% endif %}
+
+
+	{% endblock %}
+		
