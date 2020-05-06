@@ -3,4 +3,4 @@
 3. Add edit and Delete
 4. Disable old dates
 5. Add new fields to models.py
-6. One of the added fields disable until Onsite is selected
+6. One of the added fields disable until Away is selected
