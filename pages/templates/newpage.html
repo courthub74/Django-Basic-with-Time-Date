@@ -16,88 +16,105 @@
 	<form method="POST">
 		{% csrf_token %}
 
-		<!--DATEPICKER-->
+		<!--BODY-->
 		<div class="container">
-		<li class="list-group-item list-group-item-secondary"><h2>Select Appointment Time:</h2></li>  <!--everything in Block Content is only displayed on it's page-->
-		<br>
+			<li class="list-group-item list-group-item-secondary"><h2>Enter Appointment Info:</h2></li>  <!--everything in Block Content is only displayed on it's page-->
+			<br><br>
+
+
+			<!--NAME-->
+			<div class="form-group">
+			    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name" name="first"> 
+			</div>
+
+			<div class="form-group">
+			    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last Name" name="last"> 
+			</div>
+
+			<br>
+
+			<!--DATEPICKER-->
 			<p>Select Date:<p>
-				
+			<hr>
 				<input type="text" class="form-control" id="datepicker" placeholder="click here:" name="date" autocomplete="off">
 		</div>
 
-			<script>
-				
-				$("#datepicker").datepicker();
+				<script>
+					
+					$("#datepicker").datepicker();
 
-			</script>
+				</script>
 
 
-		<!--TIMEPICKERS-->
-		<!--Here I use the Content Delivery Network-->
-		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+			<!--TIMEPICKERS-->
+			<!--Here I use the Content Delivery Network-->
+			<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 
-		<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+			<br>
+
+
+
 
 		<div class="container">
-			<p>Start Time:<p>
-			<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="start">
+				<p>Start Time:<p>
+				<hr>
+					<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="start">
+					<br>
+					<p>End Time:<p>
+					<hr>
+					<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="end">
 
-			<p>End Time:<p>
-			<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="end">
+			<!--TIMEPICKER SCRIPT-->
+				<script>
+					
+					$('.timepicker').timepicker({
+					    timeFormat: 'h:mm p',
+					    interval: 30,
+					    minTime: '9',
+					    maxTime: '10:00pm',
+					    defaultTime: '11',
+					    startTime: '9:00',
+					    dynamic: false,
+					    dropdown: true,
+					    scrollbar: true
+					});
 
-			<br>
-			<!--INSTUDIO-->
-			<p>Location:</p>
-			<hr>
-			<br>
-			<div class="input-group mb-3">
-				  <div class="input-group-prepend">
-				    <div class="input-group-text">
-				      <input type="checkbox" aria-label="Checkbox for following text input" name="location" value="Little Caesars Arena">
-				    </div>
-				  </div>
-				  <input type="text" class="form-control" aria-label="Text input with checkbox" name="location" placeholder="Little Caesars Arena">
-				</div>
+				</script>
 
 				<br>
+				<!--LOCATION-->
+				<p>Location:</p>
+				<hr>
 
-			<!--ONSITE-->
-			<div class="input-group mb-3">
-				  <div class="input-group-prepend">
-				    <div class="input-group-text">
-				      <input type="checkbox" aria-label="Checkbox for following text input" name="location" value="Away">
-				    </div>
-				  </div>
-				  <input type="text" class="form-control" aria-label="Text input with checkbox" name="location" placeholder="Away">
+
+				<div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <div class="input-group-text">
+					      <input type="radio" aria-label="Radio button for following text input" name="location" value="Little Caesars Arena">
+					    </div>
+					  </div>
+					  <input type="text" class="form-control" aria-label="Text input with radio" name="location" placeholder="Little Caesars Arena" value="Little Caesars Arena">
+
+
+
+					  <div class="input-group mb-3">
+					  <div class="input-group-prepend">
+					    <div class="input-group-text">
+					      <input type="radio" aria-label="Radio button for following text input" name="location" value="Away">
+					    </div>
+					  </div>
+					  <label type="text" class="form-control" aria-label="Text input with radio" name="location">Away</label> 
+					</div>
 				</div>
 
-				
-				
+					<br>
 
+				
 			</div>
-		</div>
-
-
-		</div>
-
 			
-		</div>
 
-		<script>
-			
-			$('.timepicker').timepicker({
-			    timeFormat: 'h:mm p',
-			    interval: 30,
-			    minTime: '9',
-			    maxTime: '10:00pm',
-			    defaultTime: '11',
-			    startTime: '9:00',
-			    dynamic: false,
-			    dropdown: true,
-			    scrollbar: true
-			});
 
-		</script>
 
 
 

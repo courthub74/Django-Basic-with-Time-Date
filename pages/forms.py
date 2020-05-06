@@ -4,4 +4,4 @@ from .models import Time
 class TimeForm(forms.ModelForm):
 	class Meta:
 		model = Time
-		fields = ["date", "start", "end",]
+		fields = ["first", "last", "date", "start", "end", "location"]

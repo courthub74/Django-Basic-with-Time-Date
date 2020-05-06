@@ -7,7 +7,7 @@
 	<br>
 	<div class="container">
 
-		<li class="list-group-item list-group-item-secondary"><h2>Appointment List:</h2></li>
+		<li class="list-group-item list-group-item-secondary"><h2>Appointments Made:</h2></li>
 
 		{% if all_appointments %}
 			{% for times in all_appointments %} <!--you can call 'times' anything you want to reference it later-->
@@ -22,9 +22,14 @@
 			<div class="col-sm">
 				<ul class="list-group">
 					<li class="list-group-item list-group-item-primary">Appointment Scheduled:</li>
+
+
+					<li class="list-group-item"><strong>First Name:</strong> {{ times.first }}</li>
+					<li class="list-group-item"><strong>Last Name:</strong> {{ times.last }}</li>
 					<li class="list-group-item"><strong>Date:</strong> {{ times.date }}</li>
 					<li class="list-group-item"><strong>Start time:</strong> {{ times.start }}</li>
 					<li class="list-group-item"><strong>End time:</strong> {{ times.end }}</li>
+					<li class="list-group-item"><strong>Location:</strong> {{ times.location }}</li>
 				</ul>
 			</div>
 				
