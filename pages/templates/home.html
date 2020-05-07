@@ -57,20 +57,23 @@
 	<br>
 
 
-	<!--MESSAGES BLOCK-->
-	{% if messages %}
-	
-		{% for message in messages %}
-			   <div class="alert alert-primary alert-dismissable" role="alert">
-			   		<button class="close" data-dismiss="alert">
-			   			<small><sup>Close</sup></small>
-			   		</button>
-			   	{{ message }}
-			   </div>
+	 			<!--MESSAGES BLOCK-->
+			{% if messages %}
+			
+				{% for message in messages %}
+					<div class="container">
+					   <div class="alert alert-primary alert-dismissable" role="alert">
+					   		<button class="close" data-dismiss="alert">
+					   			<small><sup>Close</sup></small>
+					   		</button>
+					   	{{ message }}
+					   </div>
+					</div>
 
-		{% endfor %}
+				{% endfor %}
 
-	{% endif %}
+			{% endif %}
+
 
 
 
@@ -80,6 +83,7 @@
   		<br>
 
   		<div class="container">
+
   			<li class="list-group-item list-group-item-secondary"><h2>Detroit Pistons Scheduler App</h2></li>    <!--everything in Block Content is only displayed on page-->
   		</div>
   		<br>

@@ -62,10 +62,14 @@
 				</div>
 
 			<div class="container">
+
+
 					<p>Start Time:<p>
 					<hr>
 						<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="start" value="{{ get_appointment.start }}"> <!--VALUE shows what you had the last time-->
 						<br>
+
+
 						<p>End Time:<p>
 						<hr>
 						<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="end" value="{{ get_appointment.end }}">
@@ -126,9 +130,13 @@
 					  	<button type="submit" class="btn btn-block btn-secondary">Edit Entry</button>
 						<br>
 
+				</form><!--Closing EDIT form-->
 
 
-					<!--DELETE button-->
+
+
+
+					<!--DELETE button--> <!--Opening the FORM method for DELETE-->
 					<form method="POST" action="{% url 'delete' get_appointment.id %}"><!--action required because we are submitting to 'delete'-->
 						{% csrf_token %}
 						<input type="hidden" value="{{ get_appointment.id }}" name="id">
@@ -137,7 +145,7 @@
 
 					<hr>
 
-					</form>
+					
 
 		{% endif %}
 
