@@ -14,7 +14,7 @@
 
 
 	{% if get_appointment %}
-		<form method="POST">
+		<form method="POST"><!--No action added because we are submitting to self-->
 			{% csrf_token %}
 
 		<div class="container">
@@ -98,7 +98,7 @@
 					<div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <div class="input-group-text">
-						      <input type="radio" aria-label="Radio button for following text input" value="Little Caesars Arena" name="location">
+						      <input type="radio" aria-label="Radio button for following text input" value="Little Caesars Arena" value="{{ get_appointment.location }}" name="location">
 						    </div>
 						  </div>
 						  <label type="text" class="form-control" aria-label="Text input with radio">Little Caesars Arena</label> 
@@ -108,7 +108,7 @@
 						  <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <div class="input-group-text">
-						      <input type="radio" aria-label="Radio button for following text input" value="Away" name="location">
+						      <input type="radio" aria-label="Radio button for following text input" value="{{ get_appointment.location }}" name="location">
 						    </div>
 						  </div>
 						  <label type="text" class="form-control" aria-label="Text input with radio">Away</label> 
@@ -124,11 +124,12 @@
 					 </div>
 
 					  	<button type="submit" class="btn btn-block btn-secondary">Edit Entry</button>
-
-					
 						<br>
+
+
+
 					<!--DELETE button-->
-					<form method="POST" action="#">
+					<form method="POST" action="{% url 'delete' get_appointment.id %}"><!--action required because we are submitting to 'delete'-->
 						{% csrf_token %}
 						<input type="hidden" value="{{ get_appointment.id }}" name="id">
 						<button type="submit" class="btn btn-block btn-danger">Delete Entry</button>

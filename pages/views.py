@@ -48,5 +48,14 @@ def edit(request, list_id):
 
 
 #DELETE
+def delete(request, list_id):
+	if request.method == 'POST':
+		current_appointment = Time.objects.get(pk=list_id)
+		current_appointment.delete()
+		messages.success(request, ('Appointment Has Been Deleted...'))
+		return redirect('schedules')
+	else:
+		messages.success(request, ('Nothing To See Here...'))
+		return redirect('schedules')
 
 			
