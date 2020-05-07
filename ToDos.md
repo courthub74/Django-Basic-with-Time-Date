@@ -6,3 +6,4 @@
 6. One of the added fields disable until Away is selected
 7. Get the Timepicker and Radio Dials to retrieve info to edit {{ get_appointment.end }}
 8. ~~Add delete~~
+9. Add Appointments Complete page
