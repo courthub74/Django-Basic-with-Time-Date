@@ -5,4 +5,4 @@
 5. ~~Add new fields to models.py~~  had to make the new field blank and nullable (blank=True, null=True)
 6. One of the added fields disable until Away is selected
 7. Get the Timepicker and Radio Dials to retrieve info to edit {{ get_appointment.end }}
-8. Add delete
+8. ~~Add delete~~
