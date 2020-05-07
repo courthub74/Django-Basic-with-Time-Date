@@ -7,3 +7,5 @@
 7. Get the Timepicker and Radio Dials to retrieve info to edit {{ get_appointment.end }}
 8. ~~Add delete~~
 9. Add Appointments Complete page
+    * retrieve from appointments list and bring it to 
+        a chart on the Appointments complete page
