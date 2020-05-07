@@ -57,5 +57,10 @@ def delete(request, list_id):
 	else:
 		messages.success(request, ('Nothing To See Here...'))
 		return redirect('schedules')
+		
 
+#COMPLETE
+
+	#Here you retrieve whats on the appointments list and
+	#populate it to a created chart on the next page
 			
