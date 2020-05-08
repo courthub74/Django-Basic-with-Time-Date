@@ -11,3 +11,4 @@
         a chart on the Appointments complete page
 10. ~~Add a Dropdown list of who the appointee is going to be working with~~
 11. Placeholder for an empty page i.e. no appointments made yet
+12. Add Search feature
