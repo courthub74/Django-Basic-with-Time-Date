@@ -4,6 +4,8 @@ from django.db import models
 class Time(models.Model):
 	first = models.CharField(max_length=200, blank=True, null=True)
 	last = models.CharField(max_length=200, blank=True, null=True)
+	coach = models.CharField(max_length=200, blank=True, null=True)
+	focus = models.CharField(max_length=200, blank=True, null=True)
 	date = models.CharField(max_length=200)
 	start = models.CharField(max_length=200)
 	end = models.CharField(max_length=200)
