@@ -14,3 +14,4 @@
 12. Add Search feature
 13. ~~Re disable the address fields when LCA checked~~
 14. Disable address fields in edit page as well
+15. on Schedules, make address section dissapear when LCA selected
