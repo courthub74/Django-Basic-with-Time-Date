@@ -18,22 +18,16 @@
 			{% csrf_token %}
 
 		<div class="container">
-		<div class="form-group">         <!--VALUE instead of placeholder because you want what you entered so you can edit it-->
+		<div class="form-group">
+		<h4>Player Name:</h4>
+		<hr>         <!--VALUE instead of placeholder because you want what you entered so you can edit it-->
 			<input type="text" class="form-control" value="{{ get_appointment.first }}" name="first"> 
 		</div>
 
 		 <div class="form-group">
 		    <input type="text" class="form-control" value="{{ get_appointment.last }}" name="last"> 
 		 </div>
-
-
 		 <br>
-
-
-
-
-
-
 		<!--DATEPICKER CONNECTIONS-->
 			<link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
 			<!--JQuery-->
@@ -42,7 +36,7 @@
 			<script src="{% static 'js/jquery-ui.min.js' %}"></script>
 
 				<!--DATEPICKER-->
-				<p>Select Date:<p>
+				<h4>Select Date:</h4>
 				<hr>
 					<input type="text" class="form-control" id="datepicker" value="{{ get_appointment.date }}" name="date" autocomplete="off">
 				</div>
@@ -64,13 +58,13 @@
 			<div class="container">
 
 
-					<p>Start Time:<p>
+					<h4>Start Time:<h4>
 					<hr>
 						<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="start" value="{{ get_appointment.start }}"> <!--VALUE shows what you had the last time-->
 						<br>
 
 
-						<p>End Time:<p>
+						<h4>End Time:<h4>
 						<hr>
 						<input class="timepicker text-center form-control" jt-timepicker="" time="model.time" time-string="model.timeString" default-time="model.options.defaultTime" time-format="model.options.timeFormat" start-time="model.options.startTime" min-time="model.options.minTime" max-time="model.options.maxTime" interval="model.options.interval" dynamic="model.options.dynamic" scrollbar="model.options.scrollbar" dropdown="model.options.dropdown" name="end" value="{{ get_appointment.end }}">
 
@@ -95,10 +89,8 @@
 
 					<br>
 					<!--LOCATION-->
-					<p>Location:</p>
+					<h4>Location:</h4>
 					<hr>
-
-
 					<div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <div class="input-group-text">
@@ -118,6 +110,29 @@
 						  <label type="text" class="form-control" aria-label="Text input with radio">Other Facility</label> 
 						</div>
 					</div>
+
+					<h4>Other Facility Info:</h4>
+					<hr>
+					<p>Name:</p>
+					 <div class="form-group">
+		    			<input type="text" class="form-control" value="{{ get_appointment.facility }}" name="facility"> 
+		 			</div>
+		 			<p>Address:</p>
+		 			<div class="form-group">
+		    			<input type="text" class="form-control" value="{{ get_appointment.address }}" name="address"> 
+		 			</div>
+		 			<p>City:</p>
+		 			<div class="form-group">
+		    			<input type="text" class="form-control" value="{{ get_appointment.city }}" name="city"> 
+		 			</div>
+		 			<p>State:</p>
+		 			<div class="form-group">
+		    			<input type="text" class="form-control" value="{{ get_appointment.state }}" name="state"> 
+		 			</div>
+		 			<p>Zip:</p>
+		 			<div class="form-group">
+		    			<input type="text" class="form-control" value="{{ get_appointment.zipcode }}" name="zipcode"> 
+		 			</div>
 
 
 

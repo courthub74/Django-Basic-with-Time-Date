@@ -24,7 +24,7 @@
 			<br>
 			<div class="col-sm">
 				<ul class="list-group">
-					<li class="list-group-item list-group-item-primary">Appointment Scheduled:</li>
+					<li class="list-group-item list-group-item-secondary">Appointment Scheduled:</li>
 
 
 					<li class="list-group-item"><strong>First Name:</strong> {{ times.first }}</li>
@@ -34,7 +34,14 @@
 					<li class="list-group-item"><strong>Date:</strong> {{ times.date }}</li>
 					<li class="list-group-item"><strong>Start time:</strong> {{ times.start }}</li>
 					<li class="list-group-item"><strong>End time:</strong> {{ times.end }}</li>
-					<li class="list-group-item"><strong>Location:</strong> {{ times.location }}</li>
+					<li class="list-group-item list-group-item-primary"><strong>Location:</strong> {{ times.location }}</li>
+					<div class="container">
+						<li class="list-group-item"><strong>Name:</strong> {{ times.facility }}</li>
+						<li class="list-group-item"><strong>Address:</strong> {{ times.address }}</li>
+						<li class="list-group-item"><strong>City:</strong> {{ times.city }}</li>
+						<li class="list-group-item"><strong>State:</strong> {{ times.state }}</li>
+						<li class="list-group-item"><strong>Zipcode:</strong> {{ times.zipcode }}</li>
+					</div>
 					<a href="{% url 'edit' times.id %}" class="btn btn-block btn-primary">Edit Appointment</a>
 					<br>
 					<hr>
