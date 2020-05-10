@@ -42,12 +42,22 @@
 								margin: auto;
 								align-content: left;
 							}
-						</style>
-						<li class="list-group-item"><strong>Name:</strong> {{ times.facility }}</li>
-						<li class="list-group-item"><strong>Address:</strong> {{ times.address }}</li>
-						<li class="list-group-item"><strong>City:</strong> {{ times.city }}</li>
-						<li class="list-group-item"><strong>State:</strong> {{ times.state }}</li>
-						<li class="list-group-item"><strong>Zipcode:</strong> {{ times.zipcode }}</li>
+							</style>
+
+						<!--Dissapearence Javascript for other facility-->
+						<script type="text/javascript">
+						
+						</script>
+
+						<div id="facilblock">
+							<li class="list-group-item list-group-item-secondary">Facility Info:</li>
+							<li class="list-group-item" id="efacil"><strong>Name:</strong> {{ times.facility }}</li>
+							<li class="list-group-item" id="eaddy"><strong>Address:</strong> {{ times.address }}</li>
+							<li class="list-group-item" id="ecity"><strong>City:</strong> {{ times.city }}</li>
+							<li class="list-group-item" id="estate"><strong>State:</strong> {{ times.state }}</li>
+							<li class="list-group-item" id="ezip"><strong>Zipcode:</strong> {{ times.zipcode }}</li>
+						</div>
+
 					</div>
 					<a href="{% url 'edit' times.id %}" class="btn btn-block btn-primary">Edit Appointment</a>
 					<br>

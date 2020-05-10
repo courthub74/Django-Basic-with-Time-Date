@@ -28,6 +28,47 @@
 		    <input type="text" class="form-control" value="{{ get_appointment.last }}" name="last"> 
 		 </div>
 		 <br>
+
+
+		 <!--COACH-->
+			
+				<section>
+					<h4>Select Coach:</h4>
+					<hr>
+					<select name="coach" id="coach" class="form-control">
+						<option>click here:</option>
+						<option value="Isaiah Thomas">Isaiah Thomas</option>
+						<option value="Rasheed Wallace">Rasheed Wallace</option>
+						<option value="Bill Laimbeer">Bill Laimbeer</option>
+						<option value="Chauncey Billups">Chauncey Billups</option>
+						<option value="Ben Wallace">Ben Wallace</option>
+						<option value="Dennis Rodman">Dennis Rodman</option>
+					</select>
+				</section>
+			
+
+			<br>
+
+			
+				<section>
+					<h4>Point of Focus:<h4>
+					<hr>
+					<select name="focus" id="focus" class="form-control">
+						<option>click here:</option>
+						<option value="Ball Handling">Ball Handling</option>
+						<option value="Defense">Defense</option>
+						<option value="Passing">Passing</option>
+						<option value="Rebounding">Rebounding</option>
+						<option value="Post Moves">Post Moves</option>
+						<option value="Conditioning">Conditioning</option>
+						<option value="3 Point Shooting">3 Point Shooting</option>
+
+					</select>
+				</section>
+			
+
+				<br>
+
 		<!--DATEPICKER CONNECTIONS-->
 			<link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
 			<!--JQuery-->
@@ -94,7 +135,7 @@
 					<div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <div class="input-group-text">
-						      <input type="radio" aria-label="Radio button for following text input" value="Little Caesars Arena" value="{{ get_appointment.location }}" name="location">
+						      <input type="radio" aria-label="Radio button for following text input" value="Little Caesars Arena" value="Little Caesars Arena" name="location" id="lca2">
 						    </div>
 						  </div>
 						  <label type="text" class="form-control" aria-label="Text input with radio">Little Caesars Arena</label> 
@@ -104,7 +145,7 @@
 						  <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <div class="input-group-text">
-						      <input type="radio" aria-label="Radio button for following text input" value="{{ get_appointment.location }}" name="location">
+						      <input type="radio" aria-label="Radio button for following text input" value="Other Facility" name="location" id="facil">
 						    </div>
 						  </div>
 						  <label type="text" class="form-control" aria-label="Text input with radio">Other Facility</label> 
@@ -116,31 +157,89 @@
 						<style type="text/css">
 							.addycontainer {
 								margin: auto;
-								
 								align-content: center;
 							}
 						</style>
+
+
+    					<!--ENABLE DISABLE JAVASCRIPT-->
+
+							<script type="text/javascript" src="{% static '/js/jquery-3.5.0.min.js' %}"></script>
+
+							<script type="text/javascript">
+								$(function() {
+									$("#facil").change(function () {
+										var set = this.checked;  //If Other facility is checked then we enable 
+										if (set) {				 //other facility textfields
+											$("#editfacility").prop("disabled", false); 
+											$("#editaddress").prop("disabled", false); 
+											$("#editcity").prop("disabled", false); 
+											$("#editstate").prop("disabled", false); 
+											$("#editzip").prop("disabled", false); 
+										}
+
+										else {
+											$("#lca2").prop("disabled", true); //else LCA is enabled
+										}
+									});
+								});
+								$(function() {
+									$("#lca2").change(function() {
+										var set2 = this.checked; //If LCA is checked then we disable other facility textfields
+										if (set2) {
+											$("#editfacility").prop("disabled", true);
+											$("#editaddress").prop("disabled", true);
+											$("#editcity").prop("disabled", true);
+											$("#editstate").prop("disabled", true);
+											$("#editzip").prop("disabled", true);
+										}
+
+										else {
+											$("#facil").prop("disabled", false);
+										}
+									});
+								});
+							</script>
+
+
+
+
+						<!--Dissapearence Javascript for other facility-->
+						<script type="text/javascript">
+							(function() {
+								$("#lca2").change(function() {
+									var set3 = this.checked;
+									if (set3) {
+										$("#editfacility").fadeOut("slow");
+										$("#editaddress").fadeOut("slow");
+										$("#editcity").fadeOut("slow");
+										$("#editstate").fadeOut("slow");
+										$("#editzip").fadeOut("slow");
+									}
+								});
+							});
+						</script>
 						<h4>Other Facility Info:</h4>
 						<hr>
 						<p>Name:</p>
 							 <div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.facility }}" name="facility"> 
+				    			<input type="text" class="form-control" value="{{ get_appointment.facility }}" name="facility" id="editfacility"> 
 				 			</div>
 				 			<p>Address:</p>
 				 			<div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.address }}" name="address"> 
+				    			<input type="text" class="form-control" value="{{ get_appointment.address }}" name="address" id="editaddress"> 
 				 			</div>
 				 			<p>City:</p>
 				 			<div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.city }}" name="city"> 
+				    			<input type="text" class="form-control" value="{{ get_appointment.city }}" name="city" id="editcity"> 
 				 			</div>
 				 			<p>State:</p>
 				 			<div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.state }}" name="state"> 
+				    			<input type="text" class="form-control" value="{{ get_appointment.state }}" name="state" id="editstate"> 
 				 			</div>
 				 			<p>Zip:</p>
 				 			<div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.zipcode }}" name="zipcode"> 
+				    			<input type="text" class="form-control" value="{{ get_appointment.zipcode }}" name="zipcode" id="editzip"> 
 				 			</div>
 		 			</div>
 
