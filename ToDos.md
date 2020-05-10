@@ -13,6 +13,6 @@
 11. Placeholder for an empty page i.e. no appointments made yet
 12. Add Search feature
 13. ~~Re disable the address fields when LCA checked~~
-14. Disable address fields in edit page as well
+14. ~~Disable address fields in edit page as well~~
 15. on Schedules, make address section dissapear when LCA selected
 16. ~~make address div smaller~~
