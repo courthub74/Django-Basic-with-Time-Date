@@ -34,7 +34,9 @@
 					<li class="list-group-item"><strong>Date:</strong> {{ times.date }}</li>
 					<li class="list-group-item"><strong>Start time:</strong> {{ times.start }}</li>
 					<li class="list-group-item"><strong>End time:</strong> {{ times.end }}</li>
-					<li class="list-group-item list-group-item-primary"><strong>Location:</strong> {{ times.location }}</li>
+					<li class="list-group-item list-group-item-primary" id="locay2"><strong>Location:</strong> {{ times.location }}</li>
+
+
 
 					<div class="outputcontainer">
 							<style type="text/css">
@@ -44,10 +46,9 @@
 							}
 							</style>
 
-						<!--Dissapearence Javascript for other facility-->
-						<script type="text/javascript">
+
+
 						
-						</script>
 
 						<div id="facilblock">
 							<li class="list-group-item list-group-item-secondary">Facility Info:</li>
@@ -57,6 +58,18 @@
 							<li class="list-group-item" id="estate"><strong>State:</strong> {{ times.state }}</li>
 							<li class="list-group-item" id="ezip"><strong>Zipcode:</strong> {{ times.zipcode }}</li>
 						</div>
+
+						<!--Dissapearence Javascript for facilblock if None is in value for entries-->
+						<script type="text/javascript">
+							if ("{{ times.location }}" == "Other Facility") {
+								document.getElementById('facilblock').style.display = 'none';
+							} else {
+								document.getElementById('facilblock').style.display = 'block';
+							}
+							
+						</script>
+
+					
 
 					</div>
 					<a href="{% url 'edit' times.id %}" class="btn btn-block btn-primary">Edit Appointment</a>
