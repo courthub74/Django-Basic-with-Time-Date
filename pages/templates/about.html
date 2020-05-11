@@ -61,7 +61,7 @@
 
 						<!--Dissapearence Javascript for facilblock if None is in value for entries-->
 						<script type="text/javascript">
-							if ("{{ times.location }}" == "Other Facility") {
+							if ("{{ times.facility }}" == "None") {
 								document.getElementById('facilblock').style.display = 'none';
 							} else {
 								document.getElementById('facilblock').style.display = 'block';
