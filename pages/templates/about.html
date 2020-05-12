@@ -24,7 +24,7 @@
 			<br>
 			<div class="col-sm">
 				<ul class="list-group">
-					<li class="list-group-item list-group-item-secondary">Appointment Scheduled:</li>
+					<li class="list-group-item list-group-item-primary">Appointment Scheduled:</li>
 
 
 					<li class="list-group-item"><strong>First Name:</strong> {{ times.first }}</li>
@@ -34,29 +34,23 @@
 					<li class="list-group-item"><strong>Date:</strong> {{ times.date }}</li>
 					<li class="list-group-item"><strong>Start time:</strong> {{ times.start }}</li>
 					<li class="list-group-item"><strong>End time:</strong> {{ times.end }}</li>
-					<li class="list-group-item list-group-item-primary" id="locay2"><strong>Location:</strong> {{ times.location }}</li>
+					<li class="list-group-item list-group-item-dark" id="locay2"><strong>Location:</strong> {{ times.location }}</li>
 
 
 
-					<div class="outputcontainer">
-							<style type="text/css">
-							.outputcontainer {
-								margin: auto;
-								align-content: left;
-							}
-							</style>
+				
 
 
 
 						
 
 						<div id="facilblock">
-							<li class="list-group-item list-group-item-secondary">Facility Info:</li>
-							<li class="list-group-item" id="efacil"><strong>Name:</strong> {{ times.facility }}</li>
-							<li class="list-group-item" id="eaddy"><strong>Address:</strong> {{ times.address }}</li>
-							<li class="list-group-item" id="ecity"><strong>City:</strong> {{ times.city }}</li>
-							<li class="list-group-item" id="estate"><strong>State:</strong> {{ times.state }}</li>
-							<li class="list-group-item" id="ezip"><strong>Zipcode:</strong> {{ times.zipcode }}</li>
+							
+							<li class="list-group-item list-group-item-light" id="efacil"><strong>Facility Name:</strong> {{ times.facility }}</li>
+							<li class="list-group-item list-group-item-light" id="eaddy"><strong>Address:</strong> {{ times.address }}</li>
+							<li class="list-group-item list-group-item-light" id="ecity"><strong>City:</strong> {{ times.city }}</li>
+							<li class="list-group-item list-group-item-light" id="estate"><strong>State:</strong> {{ times.state }}</li>
+							<li class="list-group-item list-group-item-light" id="ezip"><strong>Zipcode:</strong> {{ times.zipcode }}</li>
 						</div>
 
 						<style type="text/css">
@@ -71,7 +65,7 @@
 							a2 = "{{ times.facility }}" 
 			               var menuItems = document.querySelectorAll('.list-group-item') //Node list grab
 			               if (a2 == "None") {
-			               		menuItems[9].classList.add('hidden')
+			             
 			               		menuItems[10].classList.add('hidden')
 			               		menuItems[11].classList.add('hidden')
 			               		menuItems[12].classList.add('hidden')
@@ -85,7 +79,7 @@
 
 					
 
-					</div>
+					
 					<a href="{% url 'edit' times.id %}" class="btn btn-block btn-primary">Edit Appointment</a>
 					<br>
 					<hr>
