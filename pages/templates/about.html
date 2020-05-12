@@ -59,16 +59,27 @@
 							<li class="list-group-item" id="ezip"><strong>Zipcode:</strong> {{ times.zipcode }}</li>
 						</div>
 
+						<style type="text/css">
+							.hidden {
+								display: none !important;
+							}
+						</style>
+
 						<!--Dissapearence Javascript for facilblock if None is in value for entries-->
 						<script type="text/javascript">
 							//var a = document.getElementById("efacil").value;
 							a2 = "{{ times.facility }}" 
-			               var menuItems = document.querySelectorAll('.facilblock')
+			               var menuItems = document.querySelectorAll('.list-group-item') //Node list grab
 			               if (a2 == "None") {
-			               		menuItems[0].classList.add('hidden')
+			               		menuItems[9].classList.add('hidden')
+			               		menuItems[10].classList.add('hidden')
+			               		menuItems[11].classList.add('hidden')
+			               		menuItems[12].classList.add('hidden')
+			               		menuItems[13].classList.add('hidden')
+			               		menuItems[14].classList.add('hidden')
+			               		menuItems[15].classList.add('hidden')
 			               }
-			              
-			               
+			            
 						</script>
 						
 
