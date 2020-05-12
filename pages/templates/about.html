@@ -61,13 +61,16 @@
 
 						<!--Dissapearence Javascript for facilblock if None is in value for entries-->
 						<script type="text/javascript">
-							if ("{{ times.facility }}" == "None") {
-								document.getElementById('facilblock').style.display = 'none';
-							} else {
-								document.getElementById('facilblock').style.display = 'block';
-							}
-							
+							//var a = document.getElementById("efacil").value;
+							a2 = "{{ times.facility }}" 
+			               var menuItems = document.querySelectorAll('.facilblock')
+			               if (a2 == "None") {
+			               		menuItems[0].classList.add('hidden')
+			               }
+			              
+			               
 						</script>
+						
 
 					
 
