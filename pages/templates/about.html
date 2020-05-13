@@ -12,6 +12,7 @@
 		{% if all_appointments %}
 			{% for times in all_appointments %} <!--you can call 'times' anything you want to reference it later-->
 
+
 			<!--Write a FOR loop for the title giving it a number--><!--     -->
 				<!--{% if schedules %}-->
 				<!--{% for numbers in schedules %}-->
@@ -24,9 +25,7 @@
 			<br>
 			<div class="col-sm">
 				<ul class="list-group">
-					<li class="list-group-item list-group-item-primary">Appointment Scheduled:</li>
-
-
+					<li class="list-group-item list-group-item-primary">{{ forloop.counter}} - Appointment Scheduled:</li>
 					<li class="list-group-item"><strong>First Name:</strong> {{ times.first }}</li>
 					<li class="list-group-item"><strong>Last Name:</strong> {{ times.last }}</li>
 					<li class="list-group-item"><strong>Coach:</strong> {{ times.coach }}</li>
@@ -37,12 +36,7 @@
 					<li class="list-group-item list-group-item-dark" id="locay2"><strong>Location:</strong> {{ times.location }}</li>
 
 
-
-			
-						
-
 						<div id="facilblock">
-							
 							<li class="list-group-item list-group-item-light" id="efacil"><strong>Facility Name:</strong> {{ times.facility }}</li>
 							<li class="list-group-item list-group-item-light" id="eaddy"><strong>Address:</strong> {{ times.address }}</li>
 							<li class="list-group-item list-group-item-light" id="ecity"><strong>City:</strong> {{ times.city }}</li>
@@ -64,16 +58,17 @@
 							//var a = document.getElementById("efacil").value;
 							a2 = "{{ times.facility }}" 
 			               var menuItems = document.querySelectorAll('.list-group-item') //Node list grab
-			               if (a2 == "None") {
-			             
+			               if (a2 == "None")
+			                {			      
+
 			               		menuItems[10].classList.add('hidden')
 			               		menuItems[11].classList.add('hidden')
 			               		menuItems[12].classList.add('hidden')
 			               		menuItems[13].classList.add('hidden')
 			               		menuItems[14].classList.add('hidden')
-			               		menuItems[15].classList.add('hidden')
+			               		
 			               }
-			            
+
 						</script>
 						
 
