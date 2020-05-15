@@ -57,6 +57,8 @@
 						<!--Dissapearence Javascript for facilblock if None is in value for entries-->
 						<script type="text/javascript">
 							//Determine which line the rest of these grab {{ times.city }}
+							//for every entry at {{ times.city }} do 'hidden'
+							
 						   outputs = "{{ times.city }}";
 			               var menuItems = document.querySelectorAll('.list-group-item'); //Node list grab so you can erase the WHOLE menu item
 			                
@@ -93,9 +95,8 @@
 			            </script>
 
 			                 <script type="text/javascript">
-							//var a = document.getElementById("efacil").value;
-							var outputs = document.querySelectorAll('.efacil');
-						   line3 = outputs[38];
+							
+							line3 = "{{ times.city }}"; //it's grabbing from the first block
 			               var menuItems = document.querySelectorAll('.list-group-item'); //Node list grab so you can erase the WHOLE menu item
 			                
 			               if (line3 == "None")
