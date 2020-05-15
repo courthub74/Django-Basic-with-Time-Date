@@ -37,11 +37,11 @@
 
 
 						<div id="facilblock">
-							<li class="list-group-item list-group-item-light" id="efacil"><strong>Facility Name:</strong> {{ times.facility }}</li>
-							<li class="list-group-item list-group-item-light" id="eaddy"><strong>Address:</strong> {{ times.address }}</li>
-							<li class="list-group-item list-group-item-light" id="ecity"><strong>City:</strong> {{ times.city }}</li>
-							<li class="list-group-item list-group-item-light" id="estate"><strong>State:</strong> {{ times.state }}</li>
-							<li class="list-group-item list-group-item-light" id="ezip"><strong>Zipcode:</strong> {{ times.zipcode }}</li>
+							<li class="list-group-item list-group-item-light"><strong>Facility Name:</strong><p class="efacil"> {{ times.facility }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>Address:</strong><p class="efacil"> {{ times.address }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>City:</strong><p class="efacil"> {{ times.city }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>State:</strong><p class="efacil"> {{ times.state }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>Zipcode:</strong><p class="efacil"> {{ times.zipcode }}</p></li>
 						</div>
 
 
@@ -53,29 +53,73 @@
 							}
 						</style>
 
+
 						<!--Dissapearence Javascript for facilblock if None is in value for entries-->
 						<script type="text/javascript">
-							//var a = document.getElementById("efacil").value;
-							a2 = "{{ times.facility }}" 
-			               var menuItems = document.querySelectorAll('.list-group-item') //Node list grab
+							//Determine which line the rest of these grab {{ times.city }}
+						   outputs = "{{ times.city }}";
+			               var menuItems = document.querySelectorAll('.list-group-item'); //Node list grab so you can erase the WHOLE menu item
 			                
-			               if (a2 == "None")
+			               if (outputs == "None")
 			                {			      
-
+			                	//Have to iterate thru every 
 			               		menuItems[10].classList.add('hidden')
 			               		menuItems[11].classList.add('hidden')
 			               		menuItems[12].classList.add('hidden')
 			               		menuItems[13].classList.add('hidden')
 			               		menuItems[14].classList.add('hidden')
-			               		
-			               }
 
-						</script>
+			               	}
+
+			            </script>
+
+			            <script type="text/javascript">
 						
+							var outputs = document.querySelectorAll('.efacil');
+						   line2 = outputs[24];
+			               var menuItems = document.querySelectorAll('.list-group-item'); //Node list grab so you can erase the WHOLE menu item
+			                
+			               if (line2 == "None")
+			                {			      
+			                	//Have to iterate thru every 
+			               		menuItems[24].classList.add('hidden')
+			               		menuItems[25].classList.add('hidden')
+			               		menuItems[26].classList.add('hidden')
+			               		menuItems[27].classList.add('hidden')
+			               		menuItems[28].classList.add('hidden')
 
-					
+			               	}
+			               		console.log(line2);
+			            </script>
 
-					
+			                 <script type="text/javascript">
+							//var a = document.getElementById("efacil").value;
+							var outputs = document.querySelectorAll('.efacil');
+						   line3 = outputs[38];
+			               var menuItems = document.querySelectorAll('.list-group-item'); //Node list grab so you can erase the WHOLE menu item
+			                
+			               if (line3 == "None")
+			                {			      
+			                	//Have to iterate thru every 
+			               		menuItems[38].classList.add('hidden')
+			               		menuItems[39].classList.add('hidden')
+			               		menuItems[40].classList.add('hidden')
+			               		menuItems[41].classList.add('hidden')
+			               		menuItems[42].classList.add('hidden')
+
+			               	}
+			               		
+			            </script>
+			               		
+
+
+
+			               		
+			               
+			               	
+						
+						
+			
 					<a href="{% url 'edit' times.id %}" class="btn btn-block btn-primary">Edit Appointment</a>
 					<br>
 					<hr>
