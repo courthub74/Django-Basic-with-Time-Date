@@ -1,5 +1,7 @@
 {% extends 'home.html' %}
 
+
+
 {% block content %}
 
 
@@ -37,11 +39,11 @@
 
 
 						<div id="facilblock">
-							<li class="list-group-item list-group-item-light"><strong>Facility Name:</strong><p class="efacil"> {{ times.facility }}</p></li>
-							<li class="list-group-item list-group-item-light"><strong>Address:</strong><p class="efacil"> {{ times.address }}</p></li>
-							<li class="list-group-item list-group-item-light"><strong>City:</strong><p class="efacil"> {{ times.city }}</p></li>
-							<li class="list-group-item list-group-item-light"><strong>State:</strong><p class="efacil"> {{ times.state }}</p></li>
-							<li class="list-group-item list-group-item-light"><strong>Zipcode:</strong><p class="efacil"> {{ times.zipcode }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>Facility Name:</strong><p> {{ times.facility }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>Address:</strong><p class="eaddy"> {{ times.address }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>City:</strong><p class="ecity"> {{ times.city }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>State:</strong><p class="estate"> {{ times.state }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>Zipcode:</strong><p class="ezip"> {{ times.zipcode }}</p></li>
 						</div>
 
 
@@ -49,77 +51,26 @@
 
 						<style type="text/css">
 							.hidden {
-								display: none !important;
+								display: none;
 							}
 						</style>
 
-
-						<!--Dissapearence Javascript for facilblock if None is in value for entries-->
 						<script type="text/javascript">
-							//Determine which line the rest of these grab {{ times.city }}
-							//for every entry at {{ times.city }} do 'hidden'
-							
-						   outputs = "{{ times.city }}";
-			               var menuItems = document.querySelectorAll('.list-group-item'); //Node list grab so you can erase the WHOLE menu item
-			                
-			               if (outputs == "None")
-			                {			      
-			                	//Have to iterate thru every 
-			               		menuItems[10].classList.add('hidden')
-			               		menuItems[11].classList.add('hidden')
-			               		menuItems[12].classList.add('hidden')
-			               		menuItems[13].classList.add('hidden')
-			               		menuItems[14].classList.add('hidden')
-
-			               	}
-
-			            </script>
-
-			            <script type="text/javascript">
-						
-							var outputs = document.querySelectorAll('.efacil');
-						   line2 = outputs[24];
-			               var menuItems = document.querySelectorAll('.list-group-item'); //Node list grab so you can erase the WHOLE menu item
-			                
-			               if (line2 == "None")
-			                {			      
-			                	//Have to iterate thru every 
-			               		menuItems[24].classList.add('hidden')
-			               		menuItems[25].classList.add('hidden')
-			               		menuItems[26].classList.add('hidden')
-			               		menuItems[27].classList.add('hidden')
-			               		menuItems[28].classList.add('hidden')
-
-			               	}
-			               		console.log(line2);
-			            </script>
-
-			                 <script type="text/javascript">
-							
-							line3 = "{{ times.city }}"; //it's grabbing from the first block
-			               var menuItems = document.querySelectorAll('.list-group-item'); //Node list grab so you can erase the WHOLE menu item
-			                
-			               if (line3 == "None")
-			                {			      
-			                	//Have to iterate thru every 
-			               		menuItems[38].classList.add('hidden')
-			               		menuItems[39].classList.add('hidden')
-			               		menuItems[40].classList.add('hidden')
-			               		menuItems[41].classList.add('hidden')
-			               		menuItems[42].classList.add('hidden')
-
-			               	}
-			               		
-			            </script>
-			               		
+							var TextInsideInP = document.getElementsByTagName('p')[1].innerHTML;
+							var menuItems = document.querySelectorAll('.list-group-item');
+							if (TextInsideInP == " None") {
+								menuItems[10].classList.add('hidden')
+								menuItems[11].classList.add('hidden')
+								menuItems[12].classList.add('hidden')
+								menuItems[13].classList.add('hidden')
+								menuItems[14].classList.add('hidden')
+								
+							}
+							console.log(TextInsideInP);
+						</script>
 
 
-
-			               		
-			               
-			               	
-						
-						
+		            	
 			
 					<a href="{% url 'edit' times.id %}" class="btn btn-block btn-primary">Edit Appointment</a>
 					<br>
