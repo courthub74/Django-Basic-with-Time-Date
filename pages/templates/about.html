@@ -38,7 +38,7 @@
 					<li class="list-group-item list-group-item-dark"><strong>Location:</strong><p id="locay2"> {{ times.location }}</p></li>
 
 
-						<div id="facilblock">
+						<div id="facilblock" class="facilblock">
 							<li class="list-group-item list-group-item-light out"><strong>Facility Name:</strong><p id="facil"> {{ times.facility }}</p></li>
 							<li class="list-group-item list-group-item-light out"><strong>Address:</strong><p id="eaddy"> {{ times.address }}</p></li>
 							<li class="list-group-item list-group-item-light out"><strong>City:</strong><p id="ecity"> {{ times.city }}</p></li>
@@ -53,21 +53,28 @@
 							.hidden {
 								display: none;
 							}
+							.show {
+								display: block;
+							}
 						</style>
 
 						<script type="text/javascript">
-							//NOW put a for loop in this thing
-							var addressText = document.getElementById('locay2').innerHTML;
-							var menuItems = document.querySelectorAll('.out');
-							if (addressText == " Little Caesars Arena") {
-								for (i = 0; i < 1000; i++) {
-									menuItems[i].classList.add('hidden')
+							
+								//NOW put a for loop in this thing
+								var addressText = document.getElementById('locay2').innerHTML;
+								var menuItems2 = document.querySelector('.out');
+								var menuItems = document.querySelector('#facilblock');
+								// var menuItems = document.getElementById('#facilblock');
+								if (addressText == " Little Caesars Arena") { 
+										menuItems.classList.add('hidden')
+										// for (i = 0; i < menuItems.length; i++)										
+								} else if (addressText == " Other Facility") {
+										menuItems.classList.toggle('hidden')
 								}
-							} else if (addressText == " Other Facility") {
-								for (i = 0; i < 1000; i++) {
-									menuItems[i].preventExtensions('hidden')
-								}
-							}
+
+							
+							
+							
 						</script>
 
 
