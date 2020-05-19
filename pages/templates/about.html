@@ -60,16 +60,22 @@
 
 						<script type="text/javascript">
 							
-								//NOW put a for loop in this thing
+								//NOW put a for loop in this thing 
+								// for loop addressText attach that to if statement
 								var addressText = document.getElementById('locay2').innerHTML;
-								var menuItems = document.querySelector('#facilblock');
+								var locationList = addressText
 								var menuItems2 = document.querySelectorAll('.go');
-								if (addressText == " Little Caesars Arena") { 
-									// For EVERY entry check above and do below
-										for (i = 0; i < menuItems2.length; i++) {
-												menuItems2[i].classList.add('hidden')
-											}														
-									}	 
+
+								for (i = 0; i < locationList.length; i++) {
+									if (addressText == " Little Caesars Arena") {
+										menuItems2[i].classList.add('hidden')
+										console.log(locationList)
+									} else if (addressText != " Little Caesars Arena") {
+										console.log("Not List")
+									}
+								}
+
+									
 
 							
 							
