@@ -38,12 +38,12 @@
 					<li class="list-group-item list-group-item-dark"><strong>Location:</strong><p id="locay2"> {{ times.location }}</p></li>
 
 
-						<div id="facilblock" class="facilblock">
-							<li class="list-group-item list-group-item-light out"><strong>Facility Name:</strong><p id="facil"> {{ times.facility }}</p></li>
-							<li class="list-group-item list-group-item-light out"><strong>Address:</strong><p id="eaddy"> {{ times.address }}</p></li>
-							<li class="list-group-item list-group-item-light out"><strong>City:</strong><p id="ecity"> {{ times.city }}</p></li>
-							<li class="list-group-item list-group-item-light out"><strong>State:</strong><p id="estate"> {{ times.state }}</p></li>
-							<li class="list-group-item list-group-item-light out"><strong>Zipcode:</strong><p id="ezip"> {{ times.zipcode }}</p></li>
+						<div id="facilblock">
+							<li class="list-group-item list-group-item-light"><strong>Facility Name:</strong><p id="facil"> {{ times.facility }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>Address:</strong><p id="eaddy"> {{ times.address }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>City:</strong><p id="ecity"> {{ times.city }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>State:</strong><p id="estate"> {{ times.state }}</p></li>
+							<li class="list-group-item list-group-item-light"><strong>Zipcode:</strong><p id="ezip"> {{ times.zipcode }}</p></li>
 						</div>
 
 
@@ -62,15 +62,17 @@
 							
 								//NOW put a for loop in this thing
 								var addressText = document.getElementById('locay2').innerHTML;
-								var menuItems2 = document.querySelector('.out');
 								var menuItems = document.querySelector('#facilblock');
-								// var menuItems = document.getElementById('#facilblock');
+								
 								if (addressText == " Little Caesars Arena") { 
+									// For EVERY entry check above
+									//for (i = 0; i < menuItems.length; i++) {}
 										menuItems.classList.add('hidden')
-										// for (i = 0; i < menuItems.length; i++)										
-								} else if (addressText == " Other Facility") {
-										menuItems.classList.toggle('hidden')
-								}
+										console.log(addressText)
+																				
+								} //else if (addressText == " Other Facility") {
+										//console.log(addressText)
+								//}
 
 							
 							
