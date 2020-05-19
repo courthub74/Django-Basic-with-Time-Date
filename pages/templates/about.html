@@ -39,11 +39,11 @@
 
 
 						<div id="facilblock">
-							<li class="list-group-item list-group-item-light"><strong>Facility Name:</strong><p id="facil"> {{ times.facility }}</p></li>
-							<li class="list-group-item list-group-item-light"><strong>Address:</strong><p id="eaddy"> {{ times.address }}</p></li>
-							<li class="list-group-item list-group-item-light"><strong>City:</strong><p id="ecity"> {{ times.city }}</p></li>
-							<li class="list-group-item list-group-item-light"><strong>State:</strong><p id="estate"> {{ times.state }}</p></li>
-							<li class="list-group-item list-group-item-light"><strong>Zipcode:</strong><p id="ezip"> {{ times.zipcode }}</p></li>
+							<li class="list-group-item list-group-item-light go"><strong>Facility Name:</strong><p id="facil"> {{ times.facility }}</p></li>
+							<li class="list-group-item list-group-item-light go"><strong>Address:</strong><p id="eaddy"> {{ times.address }}</p></li>
+							<li class="list-group-item list-group-item-light go"><strong>City:</strong><p id="ecity"> {{ times.city }}</p></li>
+							<li class="list-group-item list-group-item-light go"><strong>State:</strong><p id="estate"> {{ times.state }}</p></li>
+							<li class="list-group-item list-group-item-light go"><strong>Zipcode:</strong><p id="ezip"> {{ times.zipcode }}</p></li>
 						</div>
 
 
@@ -63,16 +63,13 @@
 								//NOW put a for loop in this thing
 								var addressText = document.getElementById('locay2').innerHTML;
 								var menuItems = document.querySelector('#facilblock');
-								
+								var menuItems2 = document.querySelectorAll('.go');
 								if (addressText == " Little Caesars Arena") { 
-									// For EVERY entry check above
-									//for (i = 0; i < menuItems.length; i++) {}
-										menuItems.classList.add('hidden')
-										console.log(addressText)
-																				
-								} //else if (addressText == " Other Facility") {
-										//console.log(addressText)
-								//}
+									// For EVERY entry check above and do below
+										for (i = 0; i < menuItems2.length; i++) {
+												menuItems2[i].classList.add('hidden')
+											}														
+									}	 
 
 							
 							
