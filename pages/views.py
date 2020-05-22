@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Time
 from .forms import TimeForm
 from django.contrib import messages
+from django.db.models import Q 
 
 # Create your views here.
 
@@ -60,8 +61,17 @@ def delete(request, list_id):
 
 
 #SEARCH
+def search(query=None):
+	queryset = []
+	queries = query.split(" ")
+	for q in queries:
+		posts = Time.objects.all 
+		for post in posts:
+			queryset.append(post)
+	return list(set(queryset))
 
-		
+	#all_appointments = Time.objects.all 
+	#return render(request, "about.html", {'all_appointments': all_appointments})
 
 #COMPLETE
 
