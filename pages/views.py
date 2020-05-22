@@ -57,6 +57,10 @@ def delete(request, list_id):
 	else:
 		messages.success(request, ('Nothing To See Here...'))
 		return redirect('schedules')
+
+
+#SEARCH
+
 		
 
 #COMPLETE

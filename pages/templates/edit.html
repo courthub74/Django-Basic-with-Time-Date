@@ -129,6 +129,8 @@
 
 
 					<br>
+
+					<div class="container">
 					<!--LOCATION-->
 					<h4>Location:</h4>
 					<hr>
@@ -141,17 +143,17 @@
 						  <label type="text" class="form-control" aria-label="Text input with radio">Little Caesars Arena</label> 
 
 
-
-						  <div class="input-group mb-3">
-						  <div class="input-group-prepend">
-						    <div class="input-group-text">
-						      <input type="radio" aria-label="Radio button for following text input" value="Other Facility" name="location" id="facil">
-						    </div>
-						  </div>
-						  <label type="text" class="form-control" aria-label="Text input with radio">Other Facility</label> 
-						</div>
-					</div>
-
+						
+						   <div class="input-group mb-3">
+						     <div class="input-group-prepend">
+						       <div class="input-group-text">
+						         <input type="radio" aria-label="Radio button for following text input" value="Other Facility" name="location" id="facil">
+						       </div>
+						     </div>
+						    <label type="text" class="form-control" aria-label="Text input with radio">Other Facility</label> 
+						   </div>
+						 </div>
+					   </div>
 
 					<div class="addycontainer">
 						<style type="text/css">
@@ -219,55 +221,61 @@
 								});
 							});
 						</script>
-						<h4>Other Facility Info:</h4>
+
+
+						<div class="container">
+
+							<h4>Other Facility Info:</h4>
+							<hr>
+							<p>Name:</p>
+								 <div class="form-group">
+					    			<input type="text" class="form-control" value="{{ get_appointment.facility }}" name="facility" id="editfacility"> 
+					 			</div>
+					 			<p>Address:</p>
+					 			<div class="form-group">
+					    			<input type="text" class="form-control" value="{{ get_appointment.address }}" name="address" id="editaddress"> 
+					 			</div>
+					 			<p>City:</p>
+					 			<div class="form-group">
+					    			<input type="text" class="form-control" value="{{ get_appointment.city }}" name="city" id="editcity"> 
+					 			</div>
+					 			<p>State:</p>
+					 			<div class="form-group">
+					    			<input type="text" class="form-control" value="{{ get_appointment.state }}" name="state" id="editstate"> 
+					 			</div>
+					 			<p>Zip:</p>
+					 			<div class="form-group">
+					    			<input type="text" class="form-control" value="{{ get_appointment.zipcode }}" name="zipcode" id="editzip"> 
+					 			</div>
+			 			
+
+
+
+
+
+						<div class="form-group">
+						  	<input type="hidden" value="{{ get_appointment.id }}" name="id">
+						 </div>
+
+						  	<button type="submit" class="btn btn-block btn-secondary">Edit Entry</button>
+							<br>
+
+					</form><!--Closing EDIT form-->
+
+
+
+
+
+						<!--DELETE button--> <!--Opening the FORM method for DELETE-->
+						<form method="POST" action="{% url 'delete' get_appointment.id %}"><!--action required because we are submitting to 'delete'-->
+							{% csrf_token %}
+							<input type="hidden" value="{{ get_appointment.id }}" name="id">
+							<button type="submit" class="btn btn-block btn-danger">Delete Entry</button>
+						</form>
+
 						<hr>
-						<p>Name:</p>
-							 <div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.facility }}" name="facility" id="editfacility"> 
-				 			</div>
-				 			<p>Address:</p>
-				 			<div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.address }}" name="address" id="editaddress"> 
-				 			</div>
-				 			<p>City:</p>
-				 			<div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.city }}" name="city" id="editcity"> 
-				 			</div>
-				 			<p>State:</p>
-				 			<div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.state }}" name="state" id="editstate"> 
-				 			</div>
-				 			<p>Zip:</p>
-				 			<div class="form-group">
-				    			<input type="text" class="form-control" value="{{ get_appointment.zipcode }}" name="zipcode" id="editzip"> 
-				 			</div>
-		 			</div>
 
-
-
-
-
-					<div class="form-group">
-					  	<input type="hidden" value="{{ get_appointment.id }}" name="id">
-					 </div>
-
-					  	<button type="submit" class="btn btn-block btn-secondary">Edit Entry</button>
-						<br>
-
-				</form><!--Closing EDIT form-->
-
-
-
-
-
-					<!--DELETE button--> <!--Opening the FORM method for DELETE-->
-					<form method="POST" action="{% url 'delete' get_appointment.id %}"><!--action required because we are submitting to 'delete'-->
-						{% csrf_token %}
-						<input type="hidden" value="{{ get_appointment.id }}" name="id">
-						<button type="submit" class="btn btn-block btn-danger">Delete Entry</button>
-					</form>
-
-					<hr>
+					</div>
 
 					
 

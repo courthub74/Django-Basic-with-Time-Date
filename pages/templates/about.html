@@ -35,8 +35,33 @@
 					<li class="list-group-item"><strong>Date:</strong> {{ times.date }}</li>
 					<li class="list-group-item"><strong>Start time:</strong> {{ times.start }}</li>
 					<li class="list-group-item"><strong>End time:</strong> {{ times.end }}</li>
-					<li class="list-group-item list-group-item-dark"><strong>Location:</strong> {{ times.location }}</li>
+					<br>
 
+					<div class="container">
+					<li class="list-group-item list-group-item-dark"><strong>Location:</strong></li>
+					<li class="list-group-item color"> {{ times.location }}</li>
+
+
+					<style type="text/css">
+						.goldy {
+							background-color: #FFD700;
+						}
+						.bluey {
+							background-color: #87CEEB;
+						}
+					</style>
+
+					<script type="text/javascript">
+						var colorElements = document.querySelectorAll('.color');
+						colorElements.forEach(element => {
+							if (element.innerHTML == " Other Facility") {
+								element.classList.add('goldy');
+							} else if (element.innerHTML == " Little Caesars Arena") {
+								element.classList.add('bluey');
+							}
+						});
+					</script>
+					
 
 						<div id="facilblock">
 							
@@ -51,6 +76,9 @@
 							<li class="list-group-item list-group-item-light go"> {{ times.zipcode }}</li>
 						</div>
 
+					</div>
+
+						<hr>
 
 						<!--I NEED BELOW TO HAPPEN FOR ALL TIMES IN ALL APPOINTMENTS-->
 
@@ -61,18 +89,17 @@
 						</style>
 
 						<script type="text/javascript">
-							var allElements = document.querySelectorAll('.go');
-							allElements.forEach(element => {
-								if (element.innerHTML == " None") {
-									element.classList.add('hidden');
+							var allElements = document.querySelectorAll('.go'); // make a constant variable called 'allElements' from each desired list item
+							allElements.forEach(element => {   // then declare that for each element of the constant variable do BELOW
+								if (element.innerHTML == " None") {  // if the element's innerHTML is "None"
+									element.classList.add('hidden');  // hide the element
 								}
-							});
-	
-							
+							});						
 						</script>
 
-			
+			       <div class="container">
 					<a href="{% url 'edit' times.id %}" class="btn btn-block btn-primary">Edit Appointment</a>
+					</div>
 					<br>
 					<hr>
 				</ul>
