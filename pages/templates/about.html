@@ -35,19 +35,19 @@
 					<li class="list-group-item"><strong>Date:</strong> {{ times.date }}</li>
 					<li class="list-group-item"><strong>Start time:</strong> {{ times.start }}</li>
 					<li class="list-group-item"><strong>End time:</strong> {{ times.end }}</li>
-					<li class="list-group-item list-group-item-dark"><strong>Location:</strong><p id="locay2"> {{ times.location }}</p></li>
+					<li class="list-group-item list-group-item-dark"><strong>Location:</strong> {{ times.location }}</li>
 
 
 						<div id="facilblock">
-							<label><strong>Facility Name:</strong></label>
+							
 							<li class="list-group-item list-group-item-light go"> {{ times.facility }}</li>
-							<label><strong>Address:</strong></label>
+							
 							<li class="list-group-item list-group-item-light go"> {{ times.address }}</li>
-							<label><strong>City:</strong></label>
+							
 							<li class="list-group-item list-group-item-light go"> {{ times.city }}</li>
-							<label><strong>State:</strong></label>
+							
 							<li class="list-group-item list-group-item-light go"> {{ times.state }}</li>
-							<label><strong>Zipcode:</strong></label>
+							
 							<li class="list-group-item list-group-item-light go"> {{ times.zipcode }}</li>
 						</div>
 
@@ -61,22 +61,13 @@
 						</style>
 
 						<script type="text/javascript">
-							var allElements = document.querySelector('.go');
-							var allMore = allElements.innerHTML
-
-							if (allMore == " None") {
-								console.log("Equal To None");
-							}
-
-							
-
-							/*console.log(allElements);
-							console.log(facilGet);
-							console.log(addyGet);
-							console.log(cityGet);
-							console.log(stateGet);
-							console.log(zipGet);*/
-							
+							var allElements = document.querySelectorAll('.go');
+							allElements.forEach(element => {
+								if (element.innerHTML == " None") {
+									element.classList.add('hidden');
+								}
+							});
+	
 							
 						</script>
 
