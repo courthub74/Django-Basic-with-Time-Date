@@ -39,11 +39,16 @@
 
 
 						<div id="facilblock">
-							<li class="list-group-item list-group-item-light go"><strong>Facility Name:</strong><p id="facil"> {{ times.facility }}</p></li>
-							<li class="list-group-item list-group-item-light go"><strong>Address:</strong><p id="eaddy"> {{ times.address }}</p></li>
-							<li class="list-group-item list-group-item-light go"><strong>City:</strong><p id="ecity"> {{ times.city }}</p></li>
-							<li class="list-group-item list-group-item-light go"><strong>State:</strong><p id="estate"> {{ times.state }}</p></li>
-							<li class="list-group-item list-group-item-light go"><strong>Zipcode:</strong><p id="ezip"> {{ times.zipcode }}</p></li>
+							<label><strong>Facility Name:</strong></label>
+							<li class="list-group-item list-group-item-light go"> {{ times.facility }}</li>
+							<label><strong>Address:</strong></label>
+							<li class="list-group-item list-group-item-light go"> {{ times.address }}</li>
+							<label><strong>City:</strong></label>
+							<li class="list-group-item list-group-item-light go"> {{ times.city }}</li>
+							<label><strong>State:</strong></label>
+							<li class="list-group-item list-group-item-light go"> {{ times.state }}</li>
+							<label><strong>Zipcode:</strong></label>
+							<li class="list-group-item list-group-item-light go"> {{ times.zipcode }}</li>
 						</div>
 
 
@@ -53,39 +58,28 @@
 							.hidden {
 								display: none;
 							}
-							.show {
-								display: block;
-							}
 						</style>
 
 						<script type="text/javascript">
-							
-								//NOW put a for loop in this thing 
-								// for loop addressText attach that to if statement
-								var addressText = document.getElementById('locay2').innerHTML;
-								var locationList = addressText
-								var menuItems2 = document.querySelectorAll('.go');
+							var allElements = document.querySelector('.go');
+							var allMore = allElements.innerHTML
 
-								for (i = 0; i < locationList.length; i++) {
-									if (addressText == " Little Caesars Arena") {
-										menuItems2[i].classList.add('hidden')
-										console.log(locationList)
-									} else if (addressText != " Little Caesars Arena") {
-										console.log("Not List")
-									}
-								}
-
-									
+							if (allMore == " None") {
+								console.log("Equal To None");
+							}
 
 							
+
+							/*console.log(allElements);
+							console.log(facilGet);
+							console.log(addyGet);
+							console.log(cityGet);
+							console.log(stateGet);
+							console.log(zipGet);*/
 							
 							
 						</script>
 
-
-					
-
-		            	
 			
 					<a href="{% url 'edit' times.id %}" class="btn btn-block btn-primary">Edit Appointment</a>
 					<br>
