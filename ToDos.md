@@ -16,4 +16,4 @@
 14. ~~Disable address fields in edit page as well~~
 15. ~~on Schedules, make address section dissapear when LCA selected~~
 16. ~~make address div smaller~~
-17. distinguish LCA and Other arena by different colors
+17. ~~distinguish LCA and Other arena by different colors~~
