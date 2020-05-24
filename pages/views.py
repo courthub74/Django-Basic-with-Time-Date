@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Time
 from .forms import TimeForm
 from django.contrib import messages
-from django.db.models import Q 
+
+
 
 # Create your views here.
 
@@ -26,9 +27,12 @@ def appointment(request):
 
 #ABOUT
 def schedules(request):
-	all_appointments = Time.objects.all 
-	#schedules = ['1','2','3','4']
-	return render(request, "about.html", {'all_appointments': all_appointments}) # Passing in all_appointments as all_appointments
+	all_appointments = Time.objects.all
+	search_term = ""
+	if 'search' in request.GET:
+		search_term = request.GET['search']
+		all_appointments = Time.objects.filter(first__icontains=search_term)
+	return render(request, "about.html", {'all_appointments': all_appointments, 'search_term': search_term}) # Passing in all_appointments as all_appointments
 
 
 #EDIT
@@ -61,17 +65,11 @@ def delete(request, list_id):
 
 
 #SEARCH
-def search(query=None):
-	queryset = []
-	queries = query.split(" ")
-	for q in queries:
-		posts = Time.objects.all 
-		for post in posts:
-			queryset.append(post)
-	return list(set(queryset))
 
-	#all_appointments = Time.objects.all 
-	#return render(request, "about.html", {'all_appointments': all_appointments})
+def search(request):
+	pass
+
+
 
 #COMPLETE
 

@@ -28,44 +28,53 @@
 					<br>
 
 					<div class="container">
-					<li class="list-group-item list-group-item-dark"><strong>Location:</strong></li>
-					<li class="list-group-item color"> {{ times.location }}</li>
+						<li class="list-group-item list-group-item-dark"><strong>Location:</strong></li>
+						<li class="list-group-item color"> {{ times.location }}</li>
 
 
-					<style type="text/css">
-						.goldy {
-							background-color: #FFD700;
-						}
-						.bluey {
-							background-color: #87CEEB;
-						}
-					</style>
-
-					<script type="text/javascript">
-						var colorElements = document.querySelectorAll('.color');
-						colorElements.forEach(element => {
-							if (element.innerHTML == " Other Facility") {
-								element.classList.add('goldy');
-							} else if (element.innerHTML == " Little Caesars Arena") {
-								element.classList.add('bluey');
+						<style type="text/css">
+							.goldy {
+								background-color: #FFD700;
 							}
-						});
-					</script>
-					
+							.bluey {
+								background-color: #87CEEB;
+							}
+						</style>
 
-						<div id="facilblock">
-							
-							<li class="list-group-item list-group-item-light go"> {{ times.facility }}</li>
-							
-							<li class="list-group-item list-group-item-light go"> {{ times.address }}</li>
-							
-							<li class="list-group-item list-group-item-light go"> {{ times.city }}</li>
-							
-							<li class="list-group-item list-group-item-light go"> {{ times.state }}</li>
-							
-							<li class="list-group-item list-group-item-light go"> {{ times.zipcode }}</li>
-						</div>
+						<script type="text/javascript">
+							var colorElements = document.querySelectorAll('.color');
+							colorElements.forEach(element => {
+								if (element.innerHTML == " Other Facility") {
+									element.classList.add('goldy');
+								} else if (element.innerHTML == " Little Caesars Arena") {
+									element.classList.add('bluey');
+								}
+							});
+						</script>
+						
 
+							<div id="facilblock">
+								
+								<li class="list-group-item list-group-item-light go"> {{ times.facility }}</li>
+								
+								<li class="list-group-item list-group-item-light go"> {{ times.address }}</li>
+								
+								<li class="list-group-item list-group-item-light go"> {{ times.city }}</li>
+								
+								<li class="list-group-item list-group-item-light go"> {{ times.state }}</li>
+								
+								<li class="list-group-item list-group-item-light go"> {{ times.zipcode }}</li>
+							</div>
+
+							<hr>
+
+							<div class="container">
+							      
+							      
+
+							</div>
+
+						 		
 					</div>
 
 						<hr>
