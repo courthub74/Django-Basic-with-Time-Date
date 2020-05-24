@@ -64,13 +64,6 @@ def delete(request, list_id):
 		return redirect('schedules')
 
 
-#SEARCH
-
-def search(request):
-	pass
-
-
-
 #COMPLETE
 
 	#Here you retrieve whats on the appointments list and
