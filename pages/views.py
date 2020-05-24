@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Time
 from .forms import TimeForm
 from django.contrib import messages
+from django.db.models import Q
 
 
 
@@ -31,7 +32,8 @@ def schedules(request):
 	search_term = ""
 	if 'search' in request.GET:
 		search_term = request.GET['search']
-		all_appointments = Time.objects.filter(first__icontains=search_term)
+		all_appointments = Time.objects.filter(Q(first__icontains=search_term)  |  (Q(last__icontains=search_term)))
+		#all_appointments = Time.objects.filter(last__icontains=search_term)
 	return render(request, "about.html", {'all_appointments': all_appointments, 'search_term': search_term}) # Passing in all_appointments as all_appointments
 
 
