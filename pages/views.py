@@ -29,17 +29,12 @@ def appointment(request):
 #ABOUT
 def schedules(request):
 	all_appointments = Time.objects.all
-	search_term = ""
-	search_last = ""
+	search_first = ""
 	if 'search' in request.GET:
-		search_term = request.GET['search']
-		search_last = request.GET['search']
-		all_appointments = Time.objects.filter(
-			Q(first__startswith=search_term) |
-			Q(last__startswith=search_term)
-		)
-		#all_appointments = Time.objects.filter(first__startswith=search_term).filter(last__startswith=search_term)
-	return render(request, "about.html", {'all_appointments': all_appointments, 'search_term': search_term, 'search_last': search_last}) # Passing in all_appointments as all_appointments
+		search_first = request.GET['search']
+		all_appointments = Time.objects.filter(first__startswith=search_first) 
+
+	return render(request, "about.html", {'all_appointments': all_appointments, 'search_first': search_first}) # Passing in all_appointments as all_appointments
 
 
 #EDIT
